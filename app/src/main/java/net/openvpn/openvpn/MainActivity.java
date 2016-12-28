@@ -6,19 +6,22 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    TextView txt;
+    TextView time_tv;
+    TextView ll_tv;
     SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txt = (TextView) findViewById(R.id.txt);
+        time_tv = (TextView) findViewById(R.id.time_tv);
+        ll_tv = (TextView) findViewById(R.id.ll_tv);
         sharedPreferences = getSharedPreferences("config",
                 Activity.MODE_PRIVATE);
 
-        String name = sharedPreferences.getString("username", "");
-        String userpwd2 = sharedPreferences.getString("userpwd2", "");
-        txt.setText("name:" + name + ":" + userpwd2);
+        String time = sharedPreferences.getString("time", "");
+        String left = sharedPreferences.getString("left", "");
+        time_tv.setText("剩余分钟数:" + time);
+        ll_tv.setText("流量:" + left);
     }
 }

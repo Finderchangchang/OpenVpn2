@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">OpenVpn</string>
-    <string name="ip">121.196.193.177</string>
+    <string name="ip">120.27.224.36</string>
     <string name="port">88</string>
 </resources>

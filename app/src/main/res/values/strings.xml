@@ -2,4 +2,5 @@
     <string name="app_name">OpenVpn</string>
     <string name="ip">120.27.224.36</string>
     <string name="port">88</string>
+    <string name="key">cfa4805ba1e2fbfafaa1cca2beca9b823dcf0fcc</string>
 </resources>

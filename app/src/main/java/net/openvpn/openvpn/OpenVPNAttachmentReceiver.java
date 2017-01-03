@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -22,7 +21,7 @@ import java.io.FileOutputStream;
  * Created by Administrator on 2016/12/30.
  */
 
-public class OpenVPNAttachmentReceiver extends AppCompatActivity {
+public class OpenVPNAttachmentReceiver extends Activity {
     String id;
     RequestQueue mQueue;
     SharedPreferences sharedPreferences;

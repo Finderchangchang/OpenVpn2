@@ -2,12 +2,11 @@ package net.openvpn.openvpn;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,11 +26,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LineActivity extends AppCompatActivity {
+public class LineActivity extends FragmentActivity {
     private SectionsPagerAdapter mSectionsPagerAdapter;
     List<PlaceholderFragment> mList;
     private ViewPager mViewPager;
-    TabLayout tab;
     PlaceholderFragment fragment1;
     PlaceholderFragment fragment2;
     PlaceholderFragment fragment3;
@@ -47,7 +45,6 @@ public class LineActivity extends AppCompatActivity {
         fragment2 = new PlaceholderFragment();
         fragment3 = new PlaceholderFragment();
         mList = new ArrayList<>();
-        tab = (TabLayout) findViewById(R.id.tab);
         mViewPager = (ViewPager) findViewById(R.id.container);
 
         mQueue = Volley.newRequestQueue(this);
@@ -106,8 +103,6 @@ public class LineActivity extends AppCompatActivity {
                     }
                     mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), mList, str_list);
                     mViewPager.setAdapter(mSectionsPagerAdapter);
-                    tab.setupWithViewPager(mViewPager);
-                    tab.setTabMode(TabLayout.MODE_FIXED);
                 }
             }
         }, new Response.ErrorListener() {
@@ -119,7 +114,7 @@ public class LineActivity extends AppCompatActivity {
         mQueue.add(req);
     }
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
         List<PlaceholderFragment> lists;
         List<MessageModel.MsgBean> str_list;
 

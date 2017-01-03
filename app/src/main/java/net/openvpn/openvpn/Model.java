@@ -1,5 +1,7 @@
 package net.openvpn.openvpn;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -41,6 +43,7 @@ public class Model {
     public void setMsg(List<MsgBean> msg) {
         this.msg = msg;
     }
+
 
     public static class MsgBean {
         /**

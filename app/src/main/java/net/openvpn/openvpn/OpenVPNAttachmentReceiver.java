@@ -36,17 +36,16 @@ public class OpenVPNAttachmentReceiver extends Activity {
         mQueue = Volley.newRequestQueue(this);
         sharedPreferences = getSharedPreferences("config",
                 Activity.MODE_PRIVATE);
-        load();
     }
 
     //120.27.224.36:88/cloudapp/appapi.php?c=Lines&key=cfa4805ba1e2fbfafaa1cca2beca9b823dcf0fcc&username=boss&cid=1
     private void load() {
-        String name = sharedPreferences.getString("username_edit", "");
         String url = "http://" + getString(R.string.ip) + ":" + getString(R.string.port) + "/cloudapp/appapi.php?" +
-                "c=Lines&key=cfa4805ba1e2fbfafaa1cca2beca9b823dcf0fcc&username=" + sharedPreferences.getString("username_edit", "") + "&cid=" + id;//所需url
+                "c=Lines&key=cfa4805ba1e2fbfafaa1cca2beca9b823dcf0fcc&username=boss" + sharedPreferences.getString("username_edit", "") + "&cid=" + id;//所需url
         JsonObjectRequest req = new JsonObjectRequest(url, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
+                String s = "";
                 Model person = new Gson().fromJson(response.toString(), Model.class);
                 title_tv.setText(person.getMsg().get(0).getTitle());
                 FileOutputStream out = null;

@@ -3,6 +3,7 @@ package net.openvpn.openvpn;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -33,7 +34,7 @@ public class OpenVPNAttachmentReceiver extends Activity {
             public void onClick(View v) {
                 FileOutputStream out;
                 try {
-                    out = OpenVPNAttachmentReceiver.this.openFileOutput(bean.getTitle() + ".ovpn", Context.MODE_PRIVATE);
+                    out = OpenVPNAttachmentReceiver.this.openFileOutput(Base64.decode(bean.getTitle().getBytes(), Base64.DEFAULT) + ".ovpn", Context.MODE_PRIVATE);
                     out.write(bean.getContent().getBytes("UTF-8"));
                     out.close();
                 } catch (Exception e) {

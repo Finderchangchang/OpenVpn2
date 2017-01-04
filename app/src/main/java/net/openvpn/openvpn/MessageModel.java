@@ -1,5 +1,6 @@
 package net.openvpn.openvpn;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -42,20 +43,23 @@ public class MessageModel {
         this.msg = msg;
     }
 
-    public static class MsgBean {
+
+    public static class MsgBean implements Serializable {
         /**
-         * id : 1
-         * name : 移动
-         * description :
-         * sortby : 1
-         * hidden : 0
+         * id : 10
+         * category_id : 1
+         * title : 移动2
+         * content : 测试
+         * visit_count : 0
+         * timeline : 2017-01-03 11:49:55
          */
 
         private String id;
-        private String name;
-        private String description;
-        private String sortby;
-        private String hidden;
+        private String category_id;
+        private String title;
+        private String content;
+        private String visit_count;
+        private String timeline;
 
         public String getId() {
             return id;
@@ -65,36 +69,44 @@ public class MessageModel {
             this.id = id;
         }
 
-        public String getName() {
-            return name;
+        public String getCategory_id() {
+            return category_id;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setCategory_id(String category_id) {
+            this.category_id = category_id;
         }
 
-        public String getDescription() {
-            return description;
+        public String getTitle() {
+            return title;
         }
 
-        public void setDescription(String description) {
-            this.description = description;
+        public void setTitle(String title) {
+            this.title = title;
         }
 
-        public String getSortby() {
-            return sortby;
+        public String getContent() {
+            return content;
         }
 
-        public void setSortby(String sortby) {
-            this.sortby = sortby;
+        public void setContent(String content) {
+            this.content = content;
         }
 
-        public String getHidden() {
-            return hidden;
+        public String getVisit_count() {
+            return visit_count;
         }
 
-        public void setHidden(String hidden) {
-            this.hidden = hidden;
+        public void setVisit_count(String visit_count) {
+            this.visit_count = visit_count;
+        }
+
+        public String getTimeline() {
+            return timeline;
+        }
+
+        public void setTimeline(String timeline) {
+            this.timeline = timeline;
         }
     }
 }

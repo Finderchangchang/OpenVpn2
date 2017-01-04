@@ -11,7 +11,29 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:visibility="gone"></LinearLayout>
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/yd_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="移动" />
+
+        <Button
+            android:id="@+id/lt_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="联通" />
+
+        <Button
+            android:id="@+id/dx_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="电信" />
+    </LinearLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/container"
